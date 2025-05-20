@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0A3161;
+  --primary-light: #1A4374;
+  --secondary: #F0B323;
+  --secondary-light: #F7CA56;
+  --accent: #C93A36;
+  --accent-light: #D85652;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  @apply text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  @apply font-semibold;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 md:px-8;
+}
+
+.heading-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 4px;
+  width: 60px;
+  @apply bg-secondary dark:bg-secondary-light;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.wheat-pattern {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M30 10C30 10 45 25 45 30C45 35 30 50 30 50" stroke="%23F0B32333" stroke-width="1" /><path d="M30 10C30 10 15 25 15 30C15 35 30 50 30 50" stroke="%23F0B32333" stroke-width="1" /></svg>');
+  background-repeat: repeat;
+}
+
+/* Dark mode styles */
+.dark .wheat-pattern {
+  opacity: 0.05;
+}
+
+.dark .shadow-card {
+  @apply shadow-card-dark;
+}
+
+/* Smooth transitions */
+.transition-theme {
+  @apply transition-all duration-200;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 dark:bg-primary-light/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary dark:bg-primary-light;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
