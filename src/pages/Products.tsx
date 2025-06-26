@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search, Filter } from "lucide-react";
+import { Search, Filter, X } from "lucide-react";
 import SectionHeading from "../components/shared/SectionHeading";
 import Button from "../components/shared/Button";
 import a10 from "../assets/a10.png";
@@ -10,7 +10,7 @@ import zf80 from "../assets/zf80.png";
 import sf from "../assets/sf.png";
 import a20 from "../assets/a20.png";
 import zchokar from "../assets/z chokar.png";
-
+import Zamindar from "../assets/Zamindar.png";
 const Products = () => {
   useEffect(() => {
     document.title = "Our Products - Data Flour Mills (DFM)";
@@ -22,7 +22,7 @@ const Products = () => {
     "Wheat Flour",
     "Maida",
     "Semolina",
-    "Export Grade",
+    "Export Grade"
   ];
 
   // Product weights for filtering
@@ -33,11 +33,25 @@ const Products = () => {
   const [selectedWeight, setSelectedWeight] = useState("All Weights");
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const [modalProduct, setModalProduct] = useState<null | (typeof products)[0]>(
+    null
+  );
 
   // Product data
   const products = [
     {
       id: 1,
+      name: "Zamindar Maida",
+      description:
+        "Stone-ground whole wheat flour for chapatis and rotis with a perfect texture.",
+      category: "Wheat Flour",
+      weights: ["1 kg", "5 kg", "10 kg"],
+      image: Zamindar,
+      features: ["Stone Ground", "High Protein", "No Additives"],
+      isExportQuality: false
+    },
+    {
+      id: 2,
       name: "Premium Chakki Atta",
       description:
         "Stone-ground whole wheat flour for chapatis and rotis with a perfect texture.",
@@ -45,10 +59,10 @@ const Products = () => {
       weights: ["1 kg", "5 kg", "10 kg"],
       image: a10,
       features: ["Stone Ground", "High Protein", "No Additives"],
-      isExportQuality: false,
+      isExportQuality: false
     },
     {
-      id: 2,
+      id: 3,
       name: "Superfine Maida",
       description:
         "Ultra-refined wheat flour ideal for making naan, cakes, pastries, and cookies.",
@@ -56,10 +70,10 @@ const Products = () => {
       weights: ["1 kg", "5 kg", "25 kg"],
       image: threec,
       features: ["Fine Texture", "Bleached", "Enriched"],
-      isExportQuality: false,
+      isExportQuality: false
     },
     {
-      id: 3,
+      id: 4,
       name: "Premium Suji/Rava",
       description:
         "Coarse wheat semolina perfect for upma, halwa, idli, and other traditional dishes.",
@@ -67,10 +81,10 @@ const Products = () => {
       weights: ["1 kg", "5 kg"],
       image: threem,
       features: ["Coarse Texture", "High Quality", "No Preservatives"],
-      isExportQuality: false,
+      isExportQuality: false
     },
     {
-      id: 4,
+      id: 5,
       name: "Export Grade Wheat Flour",
       description:
         "Premium quality wheat flour meeting international standards for export markets.",
@@ -80,12 +94,12 @@ const Products = () => {
       features: [
         "International Standards",
         "Quality Certified",
-        "Premium Packaging",
+        "Premium Packaging"
       ],
-      isExportQuality: true,
+      isExportQuality: true
     },
     {
-      id: 5,
+      id: 6,
       name: "Whole Wheat Flour",
       description:
         "Nutritious whole wheat flour retaining all the goodness of wheat bran and germ.",
@@ -93,10 +107,10 @@ const Products = () => {
       weights: ["5 kg", "10 kg", "25 kg"],
       image: zf80,
       features: ["100% Whole Grain", "High Fiber", "Nutrient-Rich"],
-      isExportQuality: false,
+      isExportQuality: false
     },
     {
-      id: 6,
+      id: 7,
       name: "Bombay Rawa",
       description:
         "Fine semolina flour ideal for making sweet dishes and savory snacks.",
@@ -104,10 +118,10 @@ const Products = () => {
       weights: ["1 kg", "5 kg"],
       image: sf,
       features: ["Medium Grain", "Versatile", "Premium Quality"],
-      isExportQuality: false,
+      isExportQuality: false
     },
     {
-      id: 7,
+      id: 8,
       name: "All-Purpose Flour",
       description:
         "Versatile refined flour suitable for a variety of baking and cooking applications.",
@@ -115,10 +129,10 @@ const Products = () => {
       weights: ["1 kg", "5 kg", "10 kg", "25 kg"],
       image: a20,
       features: ["Versatile", "Consistent Quality", "Enhanced with Vitamins"],
-      isExportQuality: false,
+      isExportQuality: false
     },
     {
-      id: 8,
+      id: 9,
       name: "Export Grade Semolina",
       description:
         "High-quality semolina flour meeting export standards for international markets.",
@@ -126,8 +140,8 @@ const Products = () => {
       weights: ["25 kg", "50 kg"],
       image: zchokar,
       features: ["Export Certified", "Premium Quality", "Dust-Free"],
-      isExportQuality: true,
-    },
+      isExportQuality: true
+    }
   ];
 
   // Filtered products based on category, weight, and search
@@ -146,6 +160,67 @@ const Products = () => {
 
   return (
     <>
+      {/* Product Modal */}
+      {modalProduct && (
+        <div className='fixed inset-0 z-50 bg-black/70 flex items-center justify-center'>
+          <div className='bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative animate-fadeIn'>
+            <button
+              className='absolute top-3 right-3 text-gray-500 hover:text-secondary'
+              onClick={() => setModalProduct(null)}
+              aria-label='Close'
+            >
+              <X size={28} />
+            </button>
+            <div className='flex flex-col items-center'>
+              <img
+                src={modalProduct.image}
+                alt={modalProduct.name}
+                className='w-80 h-80 object-contain mb-4 scale-110 transition-transform duration-300'
+              />
+              <h2 className='text-2xl font-bold text-primary mb-2 text-center'>
+                {modalProduct.name}
+              </h2>
+              <p className='text-gray-700 mb-4 text-center'>
+                {modalProduct.description}
+              </p>
+              <div className='flex flex-wrap gap-2 mb-4 justify-center'>
+                {modalProduct.features.map((feature, idx) => (
+                  <span
+                    key={idx}
+                    className='bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs'
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+              <div className='mb-4 text-center'>
+                <h4 className='text-sm font-medium text-gray-700 mb-1'>
+                  Available Weights:
+                </h4>
+                <div className='flex flex-wrap gap-2 justify-center'>
+                  {modalProduct.weights.map((weight, idx) => (
+                    <span
+                      key={idx}
+                      className='bg-secondary/20 text-primary-dark px-2 py-1 rounded-full text-xs font-medium'
+                    >
+                      {weight}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Button
+                variant='outline'
+                href={`/contact?product=${encodeURIComponent(
+                  modalProduct.name
+                )}`}
+                className='w-full mt-2'
+              >
+                Inquire Now
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Hero Section */}
       <section className='pt-32 pb-16 bg-primary relative overflow-hidden'>
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7886583/pexels-photo-7886583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-20"></div>
@@ -266,11 +341,15 @@ const Products = () => {
                       Export Quality
                     </span>
                   )}
-                  <div className='overflow-hidden h-48'>
+                  <div
+                    className='overflow-hidden h-48 flex items-center justify-center bg-white'
+                    onClick={() => setModalProduct(product)}
+                    style={{ cursor: "pointer" }}
+                  >
                     <img
                       src={product.image}
                       alt={product.name}
-                      className='product-image w-full h-full object-cover transition-transform'
+                      className='product-image w-full h-full object-contain p-4 transition-transform'
                     />
                   </div>
                   <div className='p-6'>
