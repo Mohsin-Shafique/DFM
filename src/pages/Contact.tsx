@@ -66,7 +66,7 @@ const Contact = () => {
     <>
       {/* Hero Section */}
       <section className='pt-32 pb-16 bg-primary relative overflow-hidden'>
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/5765/flour-wheat.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-20"></div>
         <div className='absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90'></div>
 
         <div className='container-custom relative z-10 text-center'>
