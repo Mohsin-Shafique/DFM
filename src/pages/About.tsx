@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import SectionHeading from "../components/shared/SectionHeading";
 import Button from "../components/shared/Button";
+import milimage2 from "../assets/milimage2.jpg";
+import halalcertified from "../assets/halalcertified.jpg";
 
 const About = () => {
   useEffect(() => {
@@ -12,34 +14,34 @@ const About = () => {
   // Timeline events
   const timeline = [
     {
-      year: 1985,
-      title: "Humble Beginnings",
+      year: "Early 1990s",
+      title: "Small Farmlands",
       description:
-        "Data Flour Mills was established with a single mill and a vision to provide quality flour products.",
+        "Started operations on small farmlands, laying the foundation for future growth.",
     },
     {
-      year: 1995,
-      title: "Expansion Phase",
+      year: "Late 1990s",
+      title: "Chakki Store",
       description:
-        "Expanded operations with new machinery and increased production capacity to meet growing demand.",
+        "Expanded into retail with a local chakki store to provide freshly milled flour to the community.",
     },
     {
-      year: 2005,
-      title: "Modernization",
+      year: 2000,
+      title: "Establishment of Data Flour Mills",
       description:
-        "Implemented advanced technology and automated processes to improve efficiency and quality.",
+        "Officially established Data Flour Mills with modern facilities and a vision for large-scale production.",
     },
     {
-      year: 2015,
-      title: "Export Quality",
+      year: "2000s",
+      title: "Group Expansion",
       description:
-        "Achieved international certifications and began exporting products to global markets.",
+        "The group expanded into multiple plants, including Data Food, Ghausia Flour Mills, and Zulnorain Flour Mills, strengthening its presence in the industry.",
     },
     {
       year: "Today",
       title: "Industry Leader",
       description:
-        "Recognized as a leading flour manufacturer with a commitment to innovation and excellence.",
+        "Recognized as a leading flour manufacturer with a commitment to innovation, quality, and excellence.",
     },
   ];
 
@@ -68,7 +70,7 @@ const About = () => {
             <div>
               <SectionHeading title='Our Journey' />
               <p className='text-gray-700 mb-6'>
-                Data Flour Mills was founded in 1985 with a simple mission: to
+                Data Flour Mills was founded in 2000 with a simple mission: to
                 produce the highest quality flour products using locally sourced
                 wheat. What began as a small family-owned mill has grown into
                 one of the region's most trusted names in flour manufacturing.
@@ -82,20 +84,20 @@ const About = () => {
               </p>
               <p className='text-gray-700'>
                 Today, Data Flour Mills operates a state-of-the-art facility
-                that produces a wide range of flour products for domestic and
-                international markets, maintaining the same commitment to
-                quality that has defined us from the beginning.
+                that produces a wide range of flour products for domestic
+                markets, maintaining the same commitment to quality that has
+                defined us from the beginning.
               </p>
             </div>
 
             <div className='relative'>
               <img
-                src='https://images.pexels.com/photos/4871189/pexels-photo-4871189.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                alt='Wheat field'
-                className='rounded-lg shadow-lg w-full'
+                src={milimage2}
+                alt='Data Flour Mills facility'
+                className='rounded-lg shadow-lg w-full h-100 object-cover'
               />
               <div className='absolute -bottom-6 -right-6 p-6 bg-white rounded-lg shadow-lg hidden md:block'>
-                <div className='text-4xl font-bold text-primary'>40+</div>
+                <div className='text-4xl font-bold text-primary'>25+</div>
                 <div className='text-gray-600'>Years of Excellence</div>
               </div>
             </div>
@@ -158,35 +160,37 @@ const About = () => {
         <div className='container-custom'>
           <SectionHeading
             title='Our Mission & Values'
-            subtitle='Guided by a strong set of principles, we strive to maintain the highest standards in every aspect of our operations.'
+            subtitle='Driven by purpose and guided by principles, we uphold the highest standards in everything we do.'
             centered
           />
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-8'>
+            {/* Mission */}
             <div className='bg-white p-6 rounded-lg shadow-card border-t-4 border-primary'>
               <h3 className='text-xl font-bold text-primary mb-4'>
                 Our Mission
               </h3>
               <p className='text-gray-700'>
-                To produce premium quality flour products through sustainable
-                practices, innovative technology, and unwavering commitment to
-                excellence, enriching the lives of consumers with wholesome
-                products they can trust.
+                To deliver premium flour and food products through sustainable
+                practices, advanced technology, and a steadfast dedication to
+                excellence—enriching lives with nourishment people can trust.
               </p>
             </div>
 
+            {/* Vision */}
             <div className='bg-white p-6 rounded-lg shadow-card border-t-4 border-secondary'>
               <h3 className='text-xl font-bold text-primary mb-4'>
                 Our Vision
               </h3>
               <p className='text-gray-700'>
-                To be the most trusted name in flour manufacturing globally,
-                setting industry standards for quality, innovation, and customer
-                satisfaction while maintaining our commitment to sustainable
-                practices.
+                To become the most trusted global name in flour and food
+                manufacturing, setting benchmarks for quality, innovation, and
+                customer satisfaction, while staying true to our responsibility
+                toward people and the planet.
               </p>
             </div>
 
+            {/* Values */}
             <div className='bg-white p-6 rounded-lg shadow-card border-t-4 border-accent'>
               <h3 className='text-xl font-bold text-primary mb-4'>
                 Our Values
@@ -194,11 +198,11 @@ const About = () => {
               <ul className='text-gray-700 space-y-2'>
                 <li className='flex items-start space-x-2'>
                   <span className='text-secondary font-bold'>•</span>
-                  <span>Unwavering commitment to quality</span>
+                  <span>Commitment to uncompromising quality</span>
                 </li>
                 <li className='flex items-start space-x-2'>
                   <span className='text-secondary font-bold'>•</span>
-                  <span>Integrity in all business dealings</span>
+                  <span>Integrity and transparency in all dealings</span>
                 </li>
                 <li className='flex items-start space-x-2'>
                   <span className='text-secondary font-bold'>•</span>
@@ -206,11 +210,13 @@ const About = () => {
                 </li>
                 <li className='flex items-start space-x-2'>
                   <span className='text-secondary font-bold'>•</span>
-                  <span>Respect for our employees and community</span>
+                  <span>
+                    Respect and care for employees, partners, and communities
+                  </span>
                 </li>
                 <li className='flex items-start space-x-2'>
                   <span className='text-secondary font-bold'>•</span>
-                  <span>Environmental responsibility</span>
+                  <span>Environmental stewardship and sustainability</span>
                 </li>
               </ul>
             </div>
@@ -259,23 +265,32 @@ const About = () => {
           <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-8'>
             <div className='p-6 border rounded-lg text-center hover:shadow-lg transition-shadow'>
               <div className='text-5xl mb-4'>🏅</div>
-              <h3 className='font-bold text-primary'>ISO 22000</h3>
+              <h3 className='font-bold text-primary'>ISO 9001 : 2008</h3>
               <p className='text-sm text-gray-600 mt-2'>
-                Food Safety Management
+                Certified food safety management system ensuring the highest
+                standards
               </p>
             </div>
 
             <div className='p-6 border rounded-lg text-center hover:shadow-lg transition-shadow'>
-              <div className='text-5xl mb-4'>🔍</div>
-              <h3 className='font-bold text-primary'>HACCP</h3>
-              <p className='text-sm text-gray-600 mt-2'>Hazard Analysis</p>
+              <div className='text-5xl mb-4'>✓</div>
+              <h3 className='font-bold text-primary'>HACCP Compliant</h3>
+              <p className='text-sm text-gray-600 mt-2'>
+                Hazard Analysis Critical Control Point system implementation
+              </p>
             </div>
 
             <div className='p-6 border rounded-lg text-center hover:shadow-lg transition-shadow'>
-              <div className='text-5xl mb-4'>✓</div>
-              <h3 className='font-bold text-primary'>FSSAI</h3>
+              <div className='text-5xl mb-4'>
+                <img
+                  src={halalcertified}
+                  alt='Halal Certified'
+                  className='w-16 h-16 mx-auto object-contain'
+                />
+              </div>
+              <h3 className='font-bold text-primary'>Halal Certified</h3>
               <p className='text-sm text-gray-600 mt-2'>
-                Food Safety Standards
+                Registered with IFANCA Pakistan
               </p>
             </div>
 
@@ -283,7 +298,7 @@ const About = () => {
               <div className='text-5xl mb-4'>🌐</div>
               <h3 className='font-bold text-primary'>Export Quality</h3>
               <p className='text-sm text-gray-600 mt-2'>
-                International Standards
+                Products meeting international export standards and requirements
               </p>
             </div>
           </div>
