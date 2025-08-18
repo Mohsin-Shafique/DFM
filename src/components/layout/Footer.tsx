@@ -6,7 +6,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Twitter
 } from "lucide-react";
 import Logo from "../shared/Logo";
 
@@ -21,7 +20,7 @@ const Footer = () => {
           <div className='space-y-4'>
             <Logo className='h-14' />
             <p className='mt-4 text-gray-300 text-sm leading-relaxed'>
-              Providing premium quality flour products since 1985. Our
+              Providing premium quality flour products since 2000. Our
               commitment to quality and innovation has made us a trusted name in
               the industry.
             </p>
@@ -44,17 +43,9 @@ const Footer = () => {
               >
                 <Instagram size={20} />
               </a>
+
               <a
-                href='https://twitter.com'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='Twitter'
-                className='text-white hover:text-secondary transition-colors'
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href='https://linkedin.com'
+                href='https://www.linkedin.com/company/data-flour-mills/'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='LinkedIn'
@@ -141,7 +132,7 @@ const Footer = () => {
                   to='/products'
                   className='text-gray-300 hover:text-secondary transition-colors'
                 >
-                  Maida
+                  Maida Flour
                 </Link>
               </li>
               <li>
@@ -149,7 +140,7 @@ const Footer = () => {
                   to='/products'
                   className='text-gray-300 hover:text-secondary transition-colors'
                 >
-                  Suji / Rava
+                  Whole Wheat Flour
                 </Link>
               </li>
               <li>
@@ -157,7 +148,7 @@ const Footer = () => {
                   to='/products'
                   className='text-gray-300 hover:text-secondary transition-colors'
                 >
-                  Wheat Flour
+                  Fine Flour
                 </Link>
               </li>
               <li>
@@ -165,7 +156,7 @@ const Footer = () => {
                   to='/products'
                   className='text-gray-300 hover:text-secondary transition-colors'
                 >
-                  Export Quality Flour
+                  Bran
                 </Link>
               </li>
             </ul>
@@ -208,10 +199,10 @@ const Footer = () => {
               <li className='flex items-center space-x-3'>
                 <Mail className='text-secondary flex-shrink-0' size={18} />
                 <a
-                  href='mailto:info@dataflour.com'
+                  href='mailto:dataflourmillspk@gmail.com'
                   className='text-gray-300 hover:text-secondary transition-colors'
                 >
-                  info@dataflour.com
+                  dataflourmillspk@gmail.com
                 </a>
               </li>
             </ul>

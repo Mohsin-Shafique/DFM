@@ -5,10 +5,13 @@ import Button from "../components/shared/Button";
 import SectionHeading from "../components/shared/SectionHeading";
 import ScrollReveal from "../components/shared/ScrollReveal";
 import ImageWithSkeleton from "../components/shared/ImageWithSkeleton";
-import img3333 from "../assets/3333.png";
+// import img3333 from "../assets/3333.png";
 import img4444 from "../assets/4444.png";
 import img5555 from "../assets/5555.png";
-import stockimage1 from "../assets/stockimage1.jpg";
+import chakki from "../assets/chakki.png";
+// import stockimage1 from "../assets/stockimage1.jpg";
+import halalcertified from "../assets/halalcertified.jpg";
+import stockimage11 from "../assets/stockimage11.jpg";
 
 const Home = () => {
   useEffect(() => {
@@ -19,31 +22,32 @@ const Home = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: "Superfine Flour",
+      name: "Zamindar Chakki Atta",
       description: "Premium quality superfine flour for all your baking needs",
-      image: img3333,
-      weight: "10 kg",
+      image: chakki,
+      weight: "5 kg",
     },
+
     {
       id: 2,
-      name: "Special Grade Flour",
-      description: "High-grade flour perfect for commercial bakeries",
-      image: img4444,
-      weight: "25 kg",
+      name: "Zamindar Whole Wheat Flour",
+      description: "Select grade flour for artisanal bread making",
+      image: img5555,
+      weight: "10/20 kg",
     },
     {
       id: 3,
-      name: "Premium Select Flour",
-      description: "Select grade flour for artisanal bread making",
-      image: img5555,
-      weight: "50 kg",
+      name: "Teen Sher Maida Flour",
+      description: "High-grade flour perfect for commercial bakeries",
+      image: img4444,
+      weight: "50/80 kg",
     },
   ];
 
   // Sample quality standards
   const qualityStandards = [
     {
-      title: "ISO 22000",
+      title: "ISO 9001 : 2008",
       description:
         "Certified food safety management system ensuring the highest standards",
       icon: "🏅",
@@ -55,10 +59,10 @@ const Home = () => {
       icon: "✓",
     },
     {
-      title: "FSSAI Registered",
-      description:
-        "Registered with Food Safety and Standards Authority of India",
-      icon: "🍽️",
+      title: "Halal Certified",
+      description: "Registered with IFANCA Pakistan",
+      icon: halalcertified,
+      isImage: true,
     },
     {
       title: "Export Quality",
@@ -98,7 +102,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className='text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto'
           >
-            Milling excellence since 1985. Trusted by bakers and households
+            Milling excellence since 2000. Trusted by bakers and households
             across the nation.
           </motion.p>
 
@@ -195,7 +199,7 @@ const Home = () => {
                   A Legacy of Excellence
                 </h2>
                 <p className='text-gray-700 dark:text-gray-300 mb-6 text-lg'>
-                  Since our establishment in 1985, Data Flour Mills has been
+                  Since our establishment in 2000, Data Flour Mills has been
                   committed to producing the highest quality flour products
                   using a perfect blend of traditional wisdom and modern
                   technology.
@@ -258,7 +262,7 @@ const Home = () => {
               <div className='relative'>
                 <div className='rounded-lg overflow-hidden shadow-xl'>
                   <img
-                    src={stockimage1}
+                    src={stockimage11}
                     alt='Modern flour mill facility'
                     className='w-full h-full object-cover rounded-lg'
                   />
@@ -269,7 +273,7 @@ const Home = () => {
                   className='absolute -bottom-6 -left-6 p-4 bg-white dark:bg-gray-700 rounded-lg shadow-lg hidden md:block'
                 >
                   <p className='text-primary dark:text-white font-bold'>
-                    40+ Years
+                    25+ Years
                   </p>
                   <p className='text-gray-600 dark:text-gray-400 text-sm'>
                     Of Excellence
@@ -308,7 +312,15 @@ const Home = () => {
               <ScrollReveal key={index}>
                 <div className='bg-primary-light dark:bg-gray-700 p-6 rounded-lg shadow-md text-center transition-transform hover:translate-y-[-5px]'>
                   <div className='text-4xl mb-4 text-secondary dark:text-secondary-light'>
-                    {standard.icon}
+                    {standard.isImage ? (
+                      <img
+                        src={standard.icon}
+                        alt={standard.title}
+                        className='w-16 h-16 mx-auto object-contain'
+                      />
+                    ) : (
+                      standard.icon
+                    )}
                   </div>
                   <h3 className='text-xl font-bold mb-3'>{standard.title}</h3>
                   <p className='text-gray-300 dark:text-gray-400 text-sm'>

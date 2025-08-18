@@ -21,7 +21,7 @@ const Contact = () => {
     subject: productParam ? `Inquiry about ${productParam}` : "",
     message: productParam
       ? `I would like to know more about ${productParam}.`
-      : ""
+      : "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +37,7 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -57,7 +57,7 @@ const Contact = () => {
         email: "",
         phone: "",
         subject: "",
-        message: ""
+        message: "",
       });
     }, 1500);
   };
@@ -130,8 +130,8 @@ const Contact = () => {
                     <h3 className='text-lg font-medium text-primary mb-1'>
                       Email
                     </h3>
-                    <p className='text-gray-700'>info@dataflour.com</p>
-                    <p className='text-gray-700'>sales@dataflour.com</p>
+                    <p className='text-gray-700'>dataflourmillspk@gmail.com</p>
+                    <p className='text-gray-700'>dataflourmillspk@gmail.com</p>
                   </div>
                 </div>
 
@@ -372,8 +372,8 @@ const Contact = () => {
             Become a distributor or retailer of Data Flour Mills products. Enjoy
             wholesale pricing and dedicated support.
           </p>
-          <Button href='tel:+1234567890' variant='primary' size='lg'>
-            Call Us: +1 (234) 567-890
+          <Button href='tel: 042 36553455' variant='primary' size='lg'>
+            Call Us: 042 36553455
           </Button>
         </div>
       </section>

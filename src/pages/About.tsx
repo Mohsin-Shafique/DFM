@@ -8,26 +8,6 @@ const About = () => {
   }, []);
 
   // Team members
-  const teamMembers = [
-    {
-      name: "Rajat Sharma",
-      position: "CEO & Founder",
-      image:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      name: "Priya Patel",
-      position: "Head of Operations",
-      image:
-        "https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      name: "Amit Kumar",
-      position: "Quality Control Manager",
-      image:
-        "https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    }
-  ];
 
   // Timeline events
   const timeline = [
@@ -35,32 +15,32 @@ const About = () => {
       year: 1985,
       title: "Humble Beginnings",
       description:
-        "Data Flour Mills was established with a single mill and a vision to provide quality flour products."
+        "Data Flour Mills was established with a single mill and a vision to provide quality flour products.",
     },
     {
       year: 1995,
       title: "Expansion Phase",
       description:
-        "Expanded operations with new machinery and increased production capacity to meet growing demand."
+        "Expanded operations with new machinery and increased production capacity to meet growing demand.",
     },
     {
       year: 2005,
       title: "Modernization",
       description:
-        "Implemented advanced technology and automated processes to improve efficiency and quality."
+        "Implemented advanced technology and automated processes to improve efficiency and quality.",
     },
     {
       year: 2015,
       title: "Export Quality",
       description:
-        "Achieved international certifications and began exporting products to global markets."
+        "Achieved international certifications and began exporting products to global markets.",
     },
     {
       year: "Today",
       title: "Industry Leader",
       description:
-        "Recognized as a leading flour manufacturer with a commitment to innovation and excellence."
-    }
+        "Recognized as a leading flour manufacturer with a commitment to innovation and excellence.",
+    },
   ];
 
   return (
@@ -75,7 +55,7 @@ const About = () => {
             Our Story
           </h1>
           <p className='text-xl text-white/90 max-w-3xl mx-auto'>
-            Four decades of excellence in flour milling, blending tradition with
+            Two decades of excellence in flour milling, blending tradition with
             technology.
           </p>
         </div>
