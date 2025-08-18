@@ -57,7 +57,7 @@ const About = () => {
             Our Story
           </h1>
           <p className='text-xl text-white/90 max-w-3xl mx-auto'>
-            Two decades of excellence in flour milling, blending tradition with
+            Two decades of excellence in flour milling, blending traditions with
             technology.
           </p>
         </div>
