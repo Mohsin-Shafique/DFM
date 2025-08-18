@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollToTop from "../shared/ScrollToTop";
+import WhatsAppButton from "../shared/WhatsAppButton";
 import useScrollToTop from "../../hooks/useScrollToTop";
 
 interface LayoutProps {
@@ -28,6 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className='flex-grow'>{children}</main>
       <Footer />
       <ScrollToTop />
+      <WhatsAppButton />
     </div>
   );
 };
