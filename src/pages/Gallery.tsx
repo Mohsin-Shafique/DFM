@@ -3,21 +3,24 @@ import SectionHeading from "../components/shared/SectionHeading";
 import GalleryLightbox from "../components/shared/GalleryLightbox";
 import ImageWithSkeleton from "../components/shared/ImageWithSkeleton";
 import VideoPlayer from "../components/shared/VideoPlayer";
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
-import video3 from "../assets/video3.mp4";
-import video4 from "../assets/video4.mp4";
-import video5 from "../assets/video5.mp4";
-import poster3c from "../assets/3c.png";
-import poster3m from "../assets/3m.png";
-import posterSf from "../assets/sf.png";
-import a10 from "../assets/a10.png";
-import a20 from "../assets/a20.png";
-import stockimage1 from "../assets/stockimage1.jpg";
-import truck from "../assets/truck.jpg";
-import zChokar from "../assets/z chokar.png";
-import zf50 from "../assets/zf50.png";
-import zf80 from "../assets/zf80.png";
+import mainvideo from "../assets/gallery/mainvideo.mp4";
+import v1 from "../assets/gallery/v1.mp4";
+import v2 from "../assets/gallery/v2.mp4";
+import v3 from "../assets/gallery/v3.mp4";
+import v4 from "../assets/gallery/v4.mp4";
+import v5 from "../assets/gallery/v5.mp4";
+import v6 from "../assets/gallery/v6.mp4";
+import im1 from "../assets/gallery/im1.jpg";
+import im2 from "../assets/gallery/im2.jpg";
+import i3 from "../assets/gallery/i3.jpg";
+import i4 from "../assets/gallery/i4.jpg";
+import i5 from "../assets/gallery/i5.jpg";
+import i6 from "../assets/gallery/i6.jpg";
+import i7 from "../assets/gallery/i7.jpg";
+import i8 from "../assets/gallery/i8.jpg";
+import one from "../assets/gallery/1.jpg";
+import two from "../assets/gallery/2.jpg";
+import three from "../assets/gallery/3.jpg";
 
 const Gallery = () => {
   useEffect(() => {
@@ -32,67 +35,112 @@ const Gallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Gallery images using local assets
+  // Gallery images using assets from gallery folder
   const galleryImages = [
     {
       id: 1,
-      src: a10,
-      alt: "A-10 Product",
-      category: "Products",
-    },
-    {
-      id: 2,
-      src: a20,
-      alt: "A-20 Product",
-      category: "Products",
-    },
-    {
-      id: 3,
-      src: stockimage1,
-      alt: "Factory Stock",
+      src: im1,
+      alt: "Gallery Image 1",
       category: "Facility",
     },
     {
-      id: 4,
-      src: truck,
-      alt: "Delivery Truck",
+      id: 2,
+      src: im2,
+      alt: "Gallery Image 2",
       category: "Process",
     },
     {
-      id: 5,
-      src: zChokar,
-      alt: "Z Chokar Product",
+      id: 3,
+      src: i3,
+      alt: "Gallery Image 3",
       category: "Products",
     },
     {
+      id: 4,
+      src: i4,
+      alt: "Gallery Image 4",
+      category: "Facility",
+    },
+    {
+      id: 5,
+      src: i5,
+      alt: "Gallery Image 5",
+      category: "Process",
+    },
+    {
       id: 6,
-      src: zf50,
-      alt: "ZF-50 Product",
+      src: i6,
+      alt: "Gallery Image 6",
       category: "Products",
     },
     {
       id: 7,
-      src: zf80,
-      alt: "ZF-80 Product",
-      category: "Products",
+      src: i7,
+      alt: "Gallery Image 7",
+      category: "Packaging",
     },
     {
       id: 8,
-      src: poster3c,
-      alt: "3C Product",
+      src: i8,
+      alt: "Gallery Image 8",
+      category: "Facility",
+    },
+  ];
+
+  // Video gallery items
+  const videoGallery = [
+    {
+      id: 1,
+      src: v1,
+      poster: one,
+      title: "Production Process Overview",
+      description:
+        "An overview of our complete production process from start to finish.",
+      category: "Process",
+    },
+    {
+      id: 2,
+      src: v2,
+      poster: two,
+      title: "Quality Control Procedures",
+      description:
+        "See how we maintain the highest quality standards in our products.",
+      category: "Process",
+    },
+    {
+      id: 3,
+      src: v3,
+      poster: three,
+      title: "Facility Operations",
+      description:
+        "A detailed look at our state-of-the-art facility operations.",
+      category: "Facility",
+    },
+    {
+      id: 4,
+      src: v4,
+      poster: i7,
+      title: "Product Showcase",
+      description: "Explore our diverse range of premium flour products.",
       category: "Products",
     },
     {
-      id: 9,
-      src: poster3m,
-      alt: "3M Product",
-      category: "Products",
+      id: 5,
+      src: v5,
+      poster: im2,
+      title: "Packaging Excellence",
+      description:
+        "Witness our meticulous packaging process that ensures product freshness.",
+      category: "Packaging",
     },
     {
-      id: 10,
-      src: posterSf,
-      alt: "Special Flour",
-      category: "Products",
+      id: 6,
+      src: v6,
+      poster: i4,
+      title: "Advanced Technology",
+      description:
+        "Discover the cutting-edge technology behind our milling operations.",
+      category: "Facility",
     },
   ];
 
@@ -113,25 +161,36 @@ const Gallery = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className='pt-32 pb-16 bg-primary relative overflow-hidden'>
-        <div
-          className={`absolute inset-0 bg-[url('${stockimage1}')] bg-cover bg-center opacity-20`}
-        ></div>
-        <div className='absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90'></div>
+      {/* Hero Section with Background Video */}
+      <section className='relative h-screen flex items-center justify-center overflow-hidden'>
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className='absolute inset-0 w-full h-full object-cover'
+        >
+          <source src={mainvideo} type='video/mp4' />
+          Your browser does not support the video tag.
+        </video>
 
-        <div className='container-custom relative z-10 text-center'>
-          <h1 className='text-4xl md:text-5xl font-bold text-white mb-6'>
+        {/* Overlay */}
+        <div className='absolute inset-0 bg-black/40'></div>
+
+        {/* Content */}
+        <div className='relative z-10 text-center text-white px-4'>
+          <h1 className='text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl'>
             Gallery
           </h1>
-          <p className='text-xl text-white/90 max-w-3xl mx-auto'>
+          <p className='text-xl md:text-2xl text-white/90 max-w-4xl mx-auto drop-shadow-lg'>
             Visual glimpses of our products, facility, and manufacturing
             process.
           </p>
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Photo Gallery Section */}
       <section className='section-padding bg-gray-50'>
         <div className='container-custom'>
           <SectionHeading
@@ -158,24 +217,18 @@ const Gallery = () => {
           </div>
 
           {/* Gallery Grid */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
             {filteredImages.map((image, index) => (
               <div
                 key={image.id}
-                className='overflow-hidden rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-transform hover:scale-[1.02]'
+                className='aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105 group'
                 onClick={() => openLightbox(index)}
               >
-                <div className='aspect-square'>
-                  <ImageWithSkeleton
-                    src={image.src}
-                    alt={image.alt}
-                    className='w-full h-full object-cover transition-transform hover:scale-110 duration-500'
-                  />
-                </div>
-                <div className='p-3 bg-white'>
-                  <p className='text-sm text-gray-700'>{image.alt}</p>
-                  <p className='text-xs text-gray-500'>{image.category}</p>
-                </div>
+                <ImageWithSkeleton
+                  src={image.src}
+                  alt={image.alt}
+                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                />
               </div>
             ))}
           </div>
@@ -210,58 +263,32 @@ const Gallery = () => {
             subtitle='Watch videos of our manufacturing process and facility tours.'
             centered
           />
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-            <div className='overflow-hidden rounded-lg shadow-md'>
-              <div className='aspect-video relative group cursor-pointer'>
-                <VideoPlayer
-                  src={video1}
-                  poster={poster3c}
-                  className='w-full h-full object-cover'
-                />
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {videoGallery.map((video) => (
+              <div
+                key={video.id}
+                className='overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'
+              >
+                <div className='aspect-video relative group cursor-pointer'>
+                  <VideoPlayer
+                    src={video.src}
+                    poster={video.poster}
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+                <div className='p-4 bg-white'>
+                  <h3 className='font-semibold text-lg text-primary mb-2'>
+                    {video.title}
+                  </h3>
+                  <p className='text-sm text-gray-600 mb-3'>
+                    {video.description}
+                  </p>
+                  <span className='inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full'>
+                    {video.category}
+                  </span>
+                </div>
               </div>
-              <div className='p-4 bg-white'>
-                <h3 className='font-medium text-primary'>
-                  Wheat Selection Process
-                </h3>
-                <p className='text-sm text-gray-600 mt-1'>
-                  See how we select the finest wheat grains for our premium
-                  flour products.
-                </p>
-              </div>
-            </div>
-            <div className='overflow-hidden rounded-lg shadow-md'>
-              <div className='aspect-video relative group cursor-pointer'>
-                <VideoPlayer
-                  src={video2}
-                  poster={poster3m}
-                  className='w-full h-full object-cover'
-                />
-              </div>
-              <div className='p-4 bg-white'>
-                <h3 className='font-medium text-primary'>Facility Tour</h3>
-                <p className='text-sm text-gray-600 mt-1'>
-                  Take a virtual tour of our state-of-the-art milling facility.
-                </p>
-              </div>
-            </div>
-            <div className='overflow-hidden rounded-lg shadow-md'>
-              <div className='aspect-video relative group cursor-pointer'>
-                <VideoPlayer
-                  src={video3}
-                  poster={posterSf}
-                  className='w-full h-full object-cover'
-                />
-              </div>
-              <div className='p-4 bg-white'>
-                <h3 className='font-medium text-primary'>
-                  Advanced Milling Process
-                </h3>
-                <p className='text-sm text-gray-600 mt-1'>
-                  Learn about our modern milling techniques that ensure premium
-                  quality flour.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
