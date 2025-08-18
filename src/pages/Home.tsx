@@ -12,6 +12,7 @@ import chakki from "../assets/chakki.png";
 // import stockimage1 from "../assets/stockimage1.jpg";
 import halalcertified from "../assets/halalcertified.jpg";
 import stockimage11 from "../assets/stockimage11.jpg";
+import backgroundVideo from "../assets/video.mp4";
 
 const Home = () => {
   useEffect(() => {
@@ -80,9 +81,18 @@ const Home = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-      <section className='relative min-h-screen flex items-center justify-center bg-primary dark:bg-gray-900 overflow-hidden pt-16'>
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-20 dark:opacity-10"></div>
-        <div className='absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90 dark:from-gray-900/70 dark:to-gray-900/90'></div>
+      <section className='relative min-h-screen flex items-center justify-center overflow-hidden pt-16'>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className='absolute inset-0 w-full h-full object-cover'
+        >
+          <source src={backgroundVideo} type='video/mp4' />
+          Your browser does not support the video tag.
+        </video>
+        <div className='absolute inset-0 bg-gradient-to-b from-black/40 to-black/60'></div>
 
         <div className='container-custom relative z-10 text-center py-20'>
           <motion.h1
