@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import SectionHeading from "../components/shared/SectionHeading";
 import Button from "../components/shared/Button";
 import ImageWithSkeleton from "../components/shared/ImageWithSkeleton";
 import VideoPlayer from "../components/shared/VideoPlayer";
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
-import video3 from "../assets/video3.mp4";
-import video4 from "../assets/video4.mp4";
-import video5 from "../assets/video5.mp4";
+import manuvid1 from "../assets/manuvid1.mp4";
+import manu2 from "../assets/manu2.jpg";
+import millingprocess from "../assets/millingprocess.mp4";
+import sorting from "../assets/sorting.mp4";
+import conditionvid from "../assets/condition.mp4";
+import qs from "../assets/qs.mp4";
+import qc from "../assets/qc.png";
+import sortingimg from "../assets/sorting.jpg";
+import condition from "../assets/condition.jpg";
+import milling from "../assets/milling.jpg";
 
 const ManufacturingProcess = () => {
   useEffect(() => {
@@ -22,39 +27,35 @@ const ManufacturingProcess = () => {
         "We carefully select the finest wheat grains from trusted farmers to ensure premium quality flour.",
       image:
         "https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      video: video1,
+      video: manuvid1,
     },
     {
       title: "Cleaning & Sorting",
       description:
         "The wheat undergoes a rigorous cleaning process to remove impurities and ensure only the best grains proceed to milling.",
-      image:
-        "https://images.pexels.com/photos/4439464/pexels-photo-4439464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      video: video2,
+      image: sortingimg,
+      video: sorting,
     },
     {
       title: "Conditioning",
       description:
         "Wheat is tempered to optimize moisture content, making it easier to separate the bran from the endosperm during milling.",
-      image:
-        "https://images.pexels.com/photos/4916559/pexels-photo-4916559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      video: video3,
+      image: condition,
+      video: conditionvid,
     },
     {
       title: "Milling Process",
       description:
         "Using state-of-the-art milling technology, wheat is ground into flour with precise control over texture and quality.",
-      image:
-        "https://images.pexels.com/photos/5765/flour-wheat.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      video: video4,
+      image: milling,
+      video: millingprocess,
     },
     {
-      title: "Quality Testing",
+      title: "Quality Control",
       description:
         "Each batch undergoes rigorous testing to ensure it meets our high standards for color, texture, and baking properties.",
-      image:
-        "https://images.pexels.com/photos/4916545/pexels-photo-4916545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      video: video5,
+      image: qc,
+      video: qs,
     },
   ];
 
@@ -103,7 +104,7 @@ const ManufacturingProcess = () => {
 
             <div className='relative w-full'>
               <ImageWithSkeleton
-                src='https://images.pexels.com/photos/1537169/pexels-photo-1537169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                src={manu2}
                 alt='Modern flour mill facility'
                 className='rounded-lg shadow-lg w-full'
               />
@@ -139,6 +140,7 @@ const ManufacturingProcess = () => {
                       src={step.video}
                       poster={step.image}
                       className='h-64 md:h-80 object-cover'
+                      // rotation={index === 3 ? 90 : 0} // Rotate the milling process video (step 4) by 90 degrees
                     />
                   </div>
                 </div>

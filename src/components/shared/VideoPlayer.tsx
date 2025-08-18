@@ -4,10 +4,19 @@ interface VideoPlayerProps {
   src: string;
   poster?: string;
   className?: string;
+  rotation?: number; // Rotation in degrees
 }
 
-const VideoPlayer = ({ src, poster, className = "" }: VideoPlayerProps) => {
+const VideoPlayer = ({
+  src,
+  poster,
+  className = "",
+  rotation = 0,
+}: VideoPlayerProps) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const videoStyle =
+    rotation !== 0 ? { transform: `rotate(${rotation}deg)` } : {};
 
   return (
     <div className='relative'>
@@ -33,6 +42,7 @@ const VideoPlayer = ({ src, poster, className = "" }: VideoPlayerProps) => {
         controls
         preload='none'
         className={`w-full rounded-lg ${className}`}
+        style={videoStyle}
         onLoadedData={() => setIsLoading(false)}
       />
     </div>
