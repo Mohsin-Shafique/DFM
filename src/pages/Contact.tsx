@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import SectionHeading from "../components/shared/SectionHeading";
 import Button from "../components/shared/Button";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   useEffect(() => {
@@ -47,19 +48,36 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitError("");
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-    }, 1500);
+    emailjs
+      .send(
+        "service_0kpn36p", // Your Service ID
+        "template_20y4m2t", // Your Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "et0nhjsoQ5TY0lO_P" // <-- Replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setSubmitSuccess(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setIsSubmitting(false);
+          setSubmitError("Failed to send message. Please try again later.");
+        }
+      );
   };
 
   return (
@@ -334,17 +352,6 @@ const Contact = () => {
                 Minimum order quantities vary by product. For retail products,
                 we typically require a minimum order of 10 units. For bulk
                 orders, please contact our sales team.
-              </p>
-            </div>
-
-            <div className='bg-gray-50 p-6 rounded-lg'>
-              <h3 className='text-xl font-bold text-primary mb-3'>
-                Do you ship internationally?
-              </h3>
-              <p className='text-gray-700'>
-                Yes, we export our products to several countries. International
-                shipping terms and minimum order quantities apply. Contact our
-                export department for details.
               </p>
             </div>
 

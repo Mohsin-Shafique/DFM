@@ -28,7 +28,7 @@ const Gallery = () => {
   }, []);
 
   // Gallery filter categories
-  const categories = ["All", "Products", "Facility", "Process", "Packaging"];
+  // const categories = ["All", "Products", "Facility", "Process", "Packaging"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   // State for lightbox
@@ -200,7 +200,7 @@ const Gallery = () => {
           />
 
           {/* Category Filters */}
-          <div className='flex flex-wrap justify-center gap-3 mb-12'>
+          {/* <div className='flex flex-wrap justify-center gap-3 mb-12'>
             {categories.map((category) => (
               <button
                 key={category}
@@ -214,7 +214,7 @@ const Gallery = () => {
                 {category}
               </button>
             ))}
-          </div>
+          </div> */}
 
           {/* Gallery Grid */}
           <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
