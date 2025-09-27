@@ -29,7 +29,7 @@ const Gallery = () => {
 
   // Gallery filter categories
   // const categories = ["All", "Products", "Facility", "Process", "Packaging"];
-  const [activeCategory, setActiveCategory] = useState("All");
+  // const [activeCategory, setActiveCategory] = useState("All");
 
   // State for lightbox
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -145,10 +145,7 @@ const Gallery = () => {
   ];
 
   // Filter images by category
-  const filteredImages =
-    activeCategory === "All"
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeCategory);
+  const filteredImages = galleryImages; // Show all images since filtering is disabled
 
   // Get image sources for lightbox
   const lightboxImages = filteredImages.map((img) => img.src);
@@ -169,6 +166,7 @@ const Gallery = () => {
           muted
           loop
           playsInline
+          preload='metadata'
           className='absolute inset-0 w-full h-full object-cover'
         >
           <source src={mainvideo} type='video/mp4' />
@@ -239,9 +237,7 @@ const Gallery = () => {
               <h3 className='text-xl font-medium text-gray-700 mb-2'>
                 No images found
               </h3>
-              <p className='text-gray-500'>
-                No images in the {activeCategory} category.
-              </p>
+              <p className='text-gray-500'>No images available.</p>
             </div>
           )}
         </div>

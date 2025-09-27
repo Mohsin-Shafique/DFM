@@ -68,7 +68,7 @@ const Products = () => {
     },
     {
       id: 2,
-      name: "Zamindar Whole Wheat Flour",
+      name: "Zamindar Wheat Flour",
       description:
         "Premium quality whole wheat flour for chapatis and rotis with enhanced nutritional value.",
       category: "Wheat Flour",

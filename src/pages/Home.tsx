@@ -31,7 +31,7 @@ const Home = () => {
 
     {
       id: 2,
-      name: "Zamindar Whole Wheat Flour",
+      name: "Zamindar Wheat Flour",
       description: "Select grade flour for artisanal bread making",
       image: img5555,
       weight: "10/20 kg",

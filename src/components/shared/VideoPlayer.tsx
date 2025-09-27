@@ -44,10 +44,12 @@ const VideoPlayer = ({
         src={src}
         poster={poster}
         controls
-        preload='none'
+        preload='metadata'
+        playsInline
         className={`w-full rounded-lg ${className}`}
         style={videoStyle}
         onLoadedData={() => setIsLoading(false)}
+        onCanPlay={() => setIsLoading(false)}
       />
     </div>
   );
