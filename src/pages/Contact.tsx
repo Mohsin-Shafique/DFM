@@ -73,7 +73,7 @@ const Contact = () => {
             message: "",
           });
         },
-        (error) => {
+        () => {
           setIsSubmitting(false);
           setSubmitError("Failed to send message. Please try again later.");
         }
