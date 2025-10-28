@@ -24,7 +24,7 @@ const Home = () => {
     {
       id: 1,
       name: "Zamindar Chakki Atta",
-      description: "Premium quality superfine flour for all your baking needs",
+      description: "Premium quality authentic stone-ground flour",
       image: chakki,
       weight: "5 kg",
     },

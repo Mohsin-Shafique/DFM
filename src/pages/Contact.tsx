@@ -379,8 +379,8 @@ const Contact = () => {
             Become a distributor or retailer of Data Flour Mills products. Enjoy
             wholesale pricing and dedicated support.
           </p>
-          <Button href='tel: 042 36553455' variant='primary' size='lg'>
-            Call Us: 042 36553455
+          <Button href='tel: 042 36553293' variant='primary' size='lg'>
+            Call Us: 042 36553293
           </Button>
         </div>
       </section>
