@@ -32,7 +32,8 @@ const Home = () => {
     {
       id: 2,
       name: "Zamindar Wheat Flour",
-      description: "Select grade flour for artisanal bread making",
+      description:
+        "Zamindar Atta is high quality flour specifically refined to make soft rotis",
       image: img5555,
       weight: "10/20 kg",
     },
