@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import SectionHeading from "../components/shared/SectionHeading";
 import Button from "../components/shared/Button";
 import ghausiaImage from "../assets/Units/Ghausia.png";
-import dfplImage from "../assets/Units/DataFoods.png";
+import dfplImage from "../assets/Units/Datafoods1.png";
 import zulnoorainImage from "../assets/Units/Zulnorain.png";
 
 const OtherUnits = () => {
