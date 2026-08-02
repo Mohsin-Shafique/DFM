@@ -9,6 +9,9 @@ import ImageWithSkeleton from "../components/shared/ImageWithSkeleton";
 import img4444 from "../assets/4444.png";
 import img5555 from "../assets/5555.png";
 import chakki from "../assets/chakki.png";
+import maida1kg from "../assets/zamindar-maida-1kg.png";
+import superFineAtta5kg from "../assets/zamindar-super-fine-atta-5kg.png";
+import classicValueAtta5kg from "../assets/zamindar-classic-value-atta-5kg.png";
 // import stockimage1 from "../assets/stockimage1.jpg";
 import halalcertified from "../assets/halalcertified.jpg";
 import stockimage11 from "../assets/stockimage11.jpg";
@@ -43,6 +46,30 @@ const Home = () => {
       description: "High-grade flour perfect for commercial bakeries",
       image: img4444,
       weight: "50/80 kg",
+    },
+    {
+      id: 4,
+      name: "Zamindar Maida",
+      description:
+        "Finely milled all purpose flour for naan, cakes, biscuits and pastries",
+      image: maida1kg,
+      weight: "1 kg",
+    },
+    {
+      id: 5,
+      name: "Zamindar Super Fine Atta",
+      description:
+        "Extra-fine milled atta for soft, flaky parathas and crispy puris",
+      image: superFineAtta5kg,
+      weight: "5 kg",
+    },
+    {
+      id: 6,
+      name: "Zamindar Classic Value Atta",
+      description:
+        "Freshly milled everyday atta for soft, delicious rotis at great value",
+      image: classicValueAtta5kg,
+      weight: "5 kg",
     },
   ];
 

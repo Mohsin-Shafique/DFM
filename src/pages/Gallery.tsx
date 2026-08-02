@@ -10,6 +10,9 @@ import v3 from "../assets/gallery/v3.mp4";
 import v4 from "../assets/gallery/v4.mp4";
 import v5 from "../assets/gallery/v5.mp4";
 import v6 from "../assets/gallery/v6.mp4";
+import v7 from "../assets/gallery/v7.mp4";
+import v8 from "../assets/gallery/v8.mp4";
+import v9 from "../assets/gallery/v9.mp4";
 import im1 from "../assets/gallery/im1.jpg";
 import im2 from "../assets/gallery/im2.jpg";
 import i3 from "../assets/gallery/i3.jpg";
@@ -21,6 +24,8 @@ import i8 from "../assets/gallery/i8.jpg";
 import one from "../assets/gallery/1.jpg";
 import two from "../assets/gallery/2.jpg";
 import three from "../assets/gallery/3.jpg";
+import chakkiFresh1 from "../assets/gallery/chakki-fresh-atta-1.jpg";
+import chakkiFresh2 from "../assets/gallery/chakki-fresh-atta-2.jpg";
 
 const Gallery = () => {
   useEffect(() => {
@@ -85,10 +90,30 @@ const Gallery = () => {
       alt: "Gallery Image 8",
       category: "Facility",
     },
+    {
+      id: 9,
+      src: chakkiFresh1,
+      alt: "Zamindar Chakki Fresh Atta - The Pride of Pure Grains",
+      category: "Products",
+    },
+    {
+      id: 10,
+      src: chakkiFresh2,
+      alt: "Zamindar Chakki Fresh Atta 5 kg pack",
+      category: "Products",
+    },
   ];
 
-  // Video gallery items
-  const videoGallery = [
+  // Video gallery items. `poster` is optional - without it the browser falls
+  // back to the video's own first frame.
+  const videoGallery: {
+    id: number;
+    src: string;
+    poster?: string;
+    title: string;
+    description: string;
+    category: string;
+  }[] = [
     {
       id: 1,
       src: v1,
@@ -141,6 +166,28 @@ const Gallery = () => {
       description:
         "Discover the cutting-edge technology behind our milling operations.",
       category: "Facility",
+    },
+    {
+      id: 7,
+      src: v7,
+      title: "Zamindar Brand Spot",
+      description: "A short spot showcasing the Zamindar range.",
+      category: "Products",
+    },
+    {
+      id: 8,
+      src: v8,
+      title: "Zamindar Product Film",
+      description: "A closer look at our Zamindar retail packs.",
+      category: "Products",
+    },
+    {
+      id: 9,
+      src: v9,
+      title: "Zamindar Chakki Fresh Atta",
+      description:
+        "Chakki Fresh Atta - rotis stay softer for longer, with complete nutrition.",
+      category: "Products",
     },
   ];
 

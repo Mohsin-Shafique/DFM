@@ -11,6 +11,9 @@ import sf from "../assets/sf.png";
 import zchokar from "../assets/z chokar.png";
 import Zamindar from "../assets/Zamindar.png";
 import chakki from "../assets/chakki.png";
+import maida1kg from "../assets/zamindar-maida-1kg.png";
+import superFineAtta5kg from "../assets/zamindar-super-fine-atta-5kg.png";
+import classicValueAtta5kg from "../assets/zamindar-classic-value-atta-5kg.png";
 const Products = () => {
   useEffect(() => {
     document.title = "Our Products - Data Flour Mills (DFM)";
@@ -185,6 +188,54 @@ const Products = () => {
         "Nutrient-Rich",
         "Animal Feed",
         "Natural",
+      ],
+      isExportQuality: false,
+    },
+    {
+      id: 10,
+      name: "Zamindar Maida 1 kg",
+      description:
+        "Finely milled all purpose flour in a resealable retail pouch, ideal for naan, bread, cakes, biscuits, pastries and pizzas.",
+      category: "Maida",
+      weights: ["1 kg"],
+      image: maida1kg,
+      features: [
+        "All Purpose Flour",
+        "Fine Texture",
+        "Perfect for Baking",
+        "Resealable Pouch",
+      ],
+      isExportQuality: false,
+    },
+    {
+      id: 11,
+      name: "Zamindar Super Fine Atta 5 kg",
+      description:
+        "Extra-fine milled whole wheat atta made for soft, flaky parathas and light, crispy puris with consistent dough performance.",
+      category: "Wheat Flour",
+      weights: ["5 kg"],
+      image: superFineAtta5kg,
+      features: [
+        "Extra Fine Milling",
+        "100% Wheat Flour",
+        "Ideal for Paratha & Puri",
+        "Freshness Sealed",
+      ],
+      isExportQuality: false,
+    },
+    {
+      id: 12,
+      name: "Zamindar Classic Value Atta 5 kg",
+      description:
+        "Freshly milled everyday atta that delivers soft, delicious rotis for family meals at great value.",
+      category: "Wheat Flour",
+      weights: ["5 kg"],
+      image: classicValueAtta5kg,
+      features: [
+        "Soft & Delicious Rotis",
+        "100% Wheat Flour",
+        "Perfect for Everyday Meals",
+        "Freshly Milled",
       ],
       isExportQuality: false,
     },
