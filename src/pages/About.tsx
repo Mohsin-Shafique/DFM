@@ -14,16 +14,16 @@ const About = () => {
   // Timeline events
   const timeline = [
     {
-      year: "Early 1990s",
-      title: "Small Farmlands",
+      year: "1940s",
+      title: "Agriculture & Chakki Store",
       description:
-        "Started operations on small farmlands, laying the foundation for future growth.",
+        "Rooted in agriculture since the 1940s, the family opened a local chakki store to provide freshly milled flour to the community.",
     },
     {
-      year: "Late 1990s",
-      title: "Chakki Store",
+      year: "1960s",
+      title: "Expansion & One of Lahore's First Flour Mills",
       description:
-        "Expanded into retail with a local chakki store to provide freshly milled flour to the community.",
+        "Expanded the network of stores and, through a partnership, laid the foundation of one of the first flour mills in Lahore.",
     },
     {
       year: 2000,
